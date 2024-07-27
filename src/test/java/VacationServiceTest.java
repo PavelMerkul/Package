@@ -1,15 +1,16 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import ru.netology.services.VacationService;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class VacationServiceTest {
 
     @Test
-    public void calculateVacationMonths() {
+    public void calculateVacationMonthsForLowIncome() {
         VacationService service = new VacationService();
-        int income = 100_000;
-        int expenses = 60_000;
-        int threshold = 150_000;
+        int income = 10_000; // доход в месяц
+        int expenses = 3_000; // расход в месяц
+        int threshold = 20_000;
 
         int expectedVacationMonths = 2;
         int actualVacationMonths = service.calculateVacationMonths(income, expenses, threshold);
@@ -17,4 +18,16 @@ public class VacationServiceTest {
         assertEquals(expectedVacationMonths, actualVacationMonths);
     }
 
+    @Test
+    public void calculateVacationMonthsForHighIncome() {
+        VacationService service = new VacationService();
+        int income = 100_000; // доход в месяц
+        int expenses = 60_000; // расход в месяц
+        int threshold = 150_000;
+
+        int expectedVacationMonths = 3;
+        int actualVacationMonths = service.calculateVacationMonths(income, expenses, threshold);
+
+        assertEquals(expectedVacationMonths, actualVacationMonths);
+    }
 }

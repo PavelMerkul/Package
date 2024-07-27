@@ -1,12 +1,13 @@
-import ru.netology.services.VacationService;
+package ru.netology.services;
 
 public class Main {
     public static void main(String[] args) {
-        int income = 100_000; // доход в месяц
-        int expenses = 60_000; // расход в месяц
-        int threshold = 150_000; // остаток на счету
-
         VacationService service = new VacationService();
+
+        int income = 10_000;
+        int expenses = 3000;
+        int threshold = 20_000;
+
         int vacationMonths = service.calculateVacationMonths(income, expenses, threshold);
 
         System.out.println("Количество месяцев отпуска в следующем году: " + vacationMonths);
