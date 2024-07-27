@@ -5,7 +5,7 @@ public class Main {
         VacationService service = new VacationService();
 
         int income = 10_000;
-        int expenses = 3000;
+        int expenses = 3_000;
         int threshold = 20_000;
 
         int vacationMonths = service.calculateVacationMonths(income, expenses, threshold);
