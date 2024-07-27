@@ -8,8 +8,8 @@ public class VacationService {
         for (int month = 1; month <= 12; month++) {
             if (balance >= threshold) {
                 vacationMonths++;
-                balance -= expenses; // Deduct regular expenses
-                balance -= income; // Assume the entire income is spent during vacation
+                balance -= expenses;
+                balance -= income;
             } else {
                 balance += income - expenses;
             }
