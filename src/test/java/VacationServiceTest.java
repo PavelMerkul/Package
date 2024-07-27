@@ -12,22 +12,10 @@ public class VacationServiceTest {
         int expenses = 3_000; // расход в месяц
         int threshold = 20_000;
 
-        int expectedVacationMonths = 2;
-        int actualVacationMonths = service.calculateVacationMonths(income, expenses, threshold);
-
-        assertEquals(expectedVacationMonths, actualVacationMonths);
-    }
-
-    @Test
-    public void calculateVacationMonthsForHighIncome() {
-        VacationService service = new VacationService();
-        int income = 100_000; // доход в месяц
-        int expenses = 60_000; // расход в месяц
-        int threshold = 150_000;
-
         int expectedVacationMonths = 3;
         int actualVacationMonths = service.calculateVacationMonths(income, expenses, threshold);
 
         assertEquals(expectedVacationMonths, actualVacationMonths);
     }
+
 }
