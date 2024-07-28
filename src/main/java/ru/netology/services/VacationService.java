@@ -7,10 +7,11 @@ public class VacationService {
 
         for (int month = 1; month <= 12; month++) {
             if (balance >= threshold) {
-                vacationMonths++;
                 System.out.println("Месяц " + month + ". Денег " + balance + ". Буду отдыхать. Потратил -" + expenses + ", затем ещё -" + income);
                 balance -= expenses;
-                balance -= income; // все потратил
+                balance -= income;
+                balance /= 3; // все потратил
+                vacationMonths++;
             } else {
                 System.out.println("Месяц " + month + ". Денег " + balance + ". Придётся работать. Заработал +" + income + ", потратил -" + expenses);
                 balance += income - expenses;
