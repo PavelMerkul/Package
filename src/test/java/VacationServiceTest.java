@@ -18,4 +18,19 @@ public class VacationServiceTest {
         assertEquals(expectedVacationMonths, actualVacationMonths);
     }
 
+    @Test
+    public void calculateVacationMonthsTwoIncome() {
+        VacationService service = new VacationService();
+        int income = 100_000; // доход в месяц
+        int expenses = 60_000; // расход в месяц
+        int threshold = 150_000;
+
+        int expectedVacationMonths = 2;
+        int actualVacationMonths = service.calculateVacationMonths(income, expenses, threshold);
+
+        assertEquals(expectedVacationMonths, actualVacationMonths);
+    }
+
+
+
 }
