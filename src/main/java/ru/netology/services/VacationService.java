@@ -12,8 +12,9 @@ public class VacationService {
                 balance /= 3; // все потратил
                 vacationMonths++;
             } else {
+                balance += income;
+                balance -= expenses;
                 System.out.println("Месяц " + month + ". Денег " + balance + ". Придётся работать. Заработал +" + income + ", потратил -" + expenses);
-                balance += income - expenses;
             }
         }
 
